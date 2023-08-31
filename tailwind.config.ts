@@ -6,13 +6,33 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: ["class"],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        gray: {
+          main: '#2C2C2C',
+          mainDark: '#1E1E1E',
+          border: '#D9D9D9',
+          borderDark: '#828282',
+          background: "#F2F2F2",
+          backgroundDark: "#262626"
+        }, 
+        green: {
+          main: '#00B169',
+          ligth: "#D9D9D9",
+        },
+        red: {
+          main: "#EF4949 ",
+        }
       },
+      screens: {
+        sm: "320px",
+        md: "600px",
+        lg: "800px",
+        xl: "1024px",
+        "2xl": "1366px"
+      }
     },
   },
   plugins: [],
