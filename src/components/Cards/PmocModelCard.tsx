@@ -7,8 +7,7 @@ export function PmocModelCard() {
         flex 
         flex-row 
         items-center 
-        justify-between 
-        p-2
+        py-2
         border-b-2 
         border-gray-border 
         dark:border-gray-borderDark
@@ -18,13 +17,15 @@ export function PmocModelCard() {
         shadow-black
         dark:shadow-white/10
         cursor-pointer
+        w-full
       "
     >
-      <p>411</p>
-      <p className="max-w-xs">VRV/VRF CONDENSADO</p>
-      <p>23/07/2022</p>
-      <button
-        className="
+      <p className="text-center w-[10%]">411</p>
+      <p className="text-center w-[40%]">VRV/VRF CONDENSADO</p>
+      <p className="text-center w-[30%]">23/07/2022</p>
+      <div className="flex justify-center w-[10%]">
+        <button
+          className="
           p-2 
           text-gray-main 
           dark:text-white 
@@ -33,12 +34,15 @@ export function PmocModelCard() {
           dark:shadow-white/10 
           rounded-lg 
           duration-300"
-      >
-        <FileEdit />
-      </button>
-      <button className="p-2 hover:shadow-md shadow-black dark:shadow-white/10 rounded-lg duration-300">
-        <Trash color="#EF4949" />
-      </button>
+        >
+          <FileEdit />
+        </button>
+      </div>
+      <div className="flex justify-center w-[10%]">
+        <button className="p-2 hover:shadow-md shadow-black dark:shadow-white/10 rounded-lg duration-300">
+          <Trash color="#EF4949" />
+        </button>
+      </div>
     </div>
   );
 }

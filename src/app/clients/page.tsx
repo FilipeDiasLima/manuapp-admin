@@ -26,15 +26,15 @@ export default function Client() {
             </div>
             <div className="flex flex-row items-center space-x-2">
               <p>Data: </p>
-              <IconButton icon={<ArrowDownUp />} />
+              <IconButton icon={<ArrowDownUp size={20} />} />
             </div>
             <div className="flex flex-row items-center space-x-2">
               <p>A-Z: </p>
-              <IconButton icon={<ArrowDownUp />} />
+              <IconButton icon={<ArrowDownUp size={20} />} />
             </div>
             <div className="flex flex-row items-center space-x-2">
               <p>Atualizar: </p>
-              <IconButton icon={<RefreshCcw />} />
+              <IconButton icon={<RefreshCcw size={20} />} />
             </div>
           </div>
           <div className="w-36">
@@ -48,23 +48,23 @@ export default function Client() {
           className="
             flex 
             flex-row 
-            items-center 
-            justify-between 
-            p-2
+            items-center
+            py-2
+            w-full
             border-b-2 
             border-gray-border 
             dark:border-gray-borderDark
           "
         >
-          <p>ID</p>
-          <p>Avatar</p>
-          <p>Nome</p>
-          <p>E-mail</p>
-          <p>Contato</p>
-          <p>Data de inclusão</p>
-          <p>Equipamentos</p>
-          <p>Editar</p>
-          <p>Excluir</p>
+          <p className="text-center w-[5%]">ID</p>
+          <p className="text-center w-[10%]">Avatar</p>
+          <p className="text-center w-[21%]">Nome</p>
+          <p className="text-center w-[17%]">E-mail</p>
+          <p className="text-center w-[15%]">Contato</p>
+          <p className="text-center w-[12%]">Data de inclusão</p>
+          <p className="text-center w-[10%]">Equipamentos</p>
+          <p className="text-center w-[5%]">Editar</p>
+          <p className="text-center w-[5%]">Excluir</p>
         </div>
         <div className="flex flex-col ">
           {/* Card */}

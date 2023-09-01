@@ -36,18 +36,18 @@ export default function Models() {
             flex 
             flex-row 
             items-center 
-            justify-between 
-            p-2
+            py-2
             border-b-2 
             border-gray-border 
             dark:border-gray-borderDark
+            w-full
           "
         >
-          <p>ID</p>
-          <p>Nome</p>
-          <p>Data de inclusão</p>
-          <p>Editar</p>
-          <p>Excluir</p>
+          <p className="text-center w-[10%]">ID</p>
+          <p className="text-center w-[40%]">Nome</p>
+          <p className="text-center w-[30%]">Data de inclusão</p>
+          <p className="text-center w-[10%]">Editar</p>
+          <p className="text-center w-[10%]">Excluir</p>
         </div>
         <div className="flex flex-col ">
           {/* Card */}

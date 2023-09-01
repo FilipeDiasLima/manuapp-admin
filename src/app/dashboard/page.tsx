@@ -67,7 +67,7 @@ export default function Dashboard() {
         </div>
 
         {/* Days */}
-        <div className="flex flex-row w-full overflow-x-scroll px-2">
+        <div className="flex flex-row w-full overflow-x-scroll px-2 py-6">
           {/* Card Day */}
           {weekDays.map((weekDay, index) => (
             <div

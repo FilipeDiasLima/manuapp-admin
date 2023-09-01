@@ -8,8 +8,7 @@ export function ClientCard() {
         flex 
         flex-row 
         items-center 
-        justify-between 
-        p-2
+        py-2
         border-b-2 
         border-gray-border 
         dark:border-gray-borderDark
@@ -19,22 +18,26 @@ export function ClientCard() {
         shadow-black
         dark:shadow-white/10
         cursor-pointer
+        w-full
       "
     >
-      <p>1231</p>
-      <Image
-        width={50}
-        height={50}
-        src="https://housing.com/news/wp-content/uploads/2022/11/cafe-design-compressed-1.jpg"
-        alt="avatar"
-        className="object-cover object-center w-[50px] h-[50px] rounded-xl border-2"
-      />
-      <p className="max-w-xs">Cl Prata Ltda</p>
-      <p className="max-w-xs">suporte@clprata.com.br</p>
-      <p>(92) 9 9202-3441</p>
-      <p>23/07/2022</p>
-      <button
-        className="
+      <p className="text-center w-[5%]">1231</p>
+      <div className="flex justify-center w-[10%]">
+        <Image
+          width={50}
+          height={50}
+          src="https://housing.com/news/wp-content/uploads/2022/11/cafe-design-compressed-1.jpg"
+          alt="avatar"
+          className="object-cover object-center w-[50px] h-[50px] rounded-xl border-2"
+        />
+      </div>
+      <p className="text-center w-[21%]">Cl Prata Ltda</p>
+      <p className="text-center w-[17%]">suporte@clprata.com.br</p>
+      <p className="text-center w-[15%]">(92) 9 9202-3441</p>
+      <p className="text-center w-[12%]">23/07/2022</p>
+      <div className="flex justify-center w-[10%]">
+        <button
+          className="
           p-2 
           text-gray-main 
           dark:text-white 
@@ -43,11 +46,13 @@ export function ClientCard() {
           dark:shadow-white/10 
           rounded-lg 
           duration-300"
-      >
-        <Wrench />
-      </button>
-      <button
-        className="
+        >
+          <Wrench />
+        </button>
+      </div>
+      <div className="flex justify-center w-[5%]">
+        <button
+          className="
           p-2 
           text-gray-main 
           dark:text-white 
@@ -56,12 +61,15 @@ export function ClientCard() {
           dark:shadow-white/10 
           rounded-lg 
           duration-300"
-      >
-        <UserCog2Icon />
-      </button>
-      <button className="p-2 hover:shadow-md shadow-black dark:shadow-white/10 rounded-lg duration-300">
-        <Trash color="#EF4949" />
-      </button>
+        >
+          <UserCog2Icon />
+        </button>
+      </div>
+      <div className="flex justify-center w-[5%]">
+        <button className="p-2 hover:shadow-md shadow-black dark:shadow-white/10 rounded-lg duration-300">
+          <Trash color="#EF4949" />
+        </button>
+      </div>
     </div>
   );
 }

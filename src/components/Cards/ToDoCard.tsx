@@ -57,25 +57,30 @@ export function ToDoCard({ id, onDelete }: ToDoCardProps) {
       <div
         className="
           flex 
-          flex-col 
+          flex-row 
           flex-1
-          space-y-2
+          space-x-4
           p-6
           rounded-xl
           border-2
           border-gray-border
+          dark:border-gray-borderDark
         "
       >
-        <Input placeholder="Descrição da tarefa" />
-        <Select label="Tipo de tarefa" itens={toDoTypes} />
-        <Select label="Frequência" itens={frequecyTypes} />
+        <div className="flex flex-col space-y-2 flex-1">
+          <Input placeholder="Descrição da tarefa" />
+          <Select label="Tipo de tarefa" itens={toDoTypes} />
+          <Select label="Frequência" itens={frequecyTypes} />
+        </div>
+        <div className="flex items-center">
+          <button
+            onClick={() => onDelete(id)}
+            className="p-2 hover:shadow-md shadow-black dark:shadow-white/10 rounded-lg duration-300"
+          >
+            <Trash color="#EF4949" />
+          </button>
+        </div>
       </div>
-      <button
-        onClick={() => onDelete(id)}
-        className="text-red-main hover:text-red-600 duration-300"
-      >
-        <Trash />
-      </button>
     </div>
   );
 }

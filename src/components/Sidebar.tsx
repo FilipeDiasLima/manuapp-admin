@@ -12,7 +12,7 @@ import {
   Users2,
 } from "lucide-react";
 import { useTheme } from "next-themes";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Logo from "../assets/logo.svg";
 import { OutlineButton } from "./Buttons/OutlineButton";
 import { ThemeSwitcher } from "./Buttons/ThemeSwitcher";
@@ -20,6 +20,7 @@ import { Divider } from "./Divider";
 import { Icon } from "./Icon";
 
 export function Sidebar() {
+  const router = useRouter();
   const pathname = usePathname();
 
   const { theme } = useTheme();
@@ -186,7 +187,10 @@ export function Sidebar() {
 
       {/* Bottom */}
       <div className="flex flex-col w-full space-y-6">
-        <div className="flex flex-row items-center justify-start space-x-2">
+        <div
+          className="flex flex-row items-center justify-start space-x-2 cursor-pointer"
+          onClick={() => router.push("/profile")}
+        >
           <Image
             width={50}
             height={50}

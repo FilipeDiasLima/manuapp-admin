@@ -55,13 +55,13 @@ export default function CreatePmocModel() {
           <p>Cadastrar novo modelo PMOC</p>
         </div>
         <Divider />
-        <div className="flex flex-col space-y-6 w-full">
-          <div className="w-2/6">
+        <div className="flex flex-col space-y-6 w-full items-center">
+          <div className="w-3/6">
             <Input placeholder="Nome do modelo" />
           </div>
-          <div className="flex flex-col w-full space-y-4">
-            <p>Tarefas:</p>
-            <div className="flex flex-col space-y-3 w-3/6">
+          <div className="flex flex-col w-3/6 space-y-4 items-center">
+            <p className="text-left w-full">Tarefas:</p>
+            <div className="flex flex-col space-y-3 w-full">
               {toDoInfo.map((toDo) => (
                 <ToDoCard
                   key={toDo.id}
@@ -69,7 +69,7 @@ export default function CreatePmocModel() {
                   onDelete={handleRemoveCard}
                 />
               ))}
-              <div>
+              <div className="flex w-full justify-center">
                 <button
                   onClick={handleAddCard}
                   className="
@@ -84,12 +84,15 @@ export default function CreatePmocModel() {
                 </button>
               </div>
             </div>
-            <div className="w-2/6 flex flex-row space-x-4">
-              <OutlineButton
-                label="Cancelar"
-                onClick={() => navigation.back()}
-              />
-              <MainButton label="Salvar" />
+            <div className="w-full flex flex-col space-y-4">
+              <Divider />
+              <div className="w-full flex flex-row space-x-4">
+                <OutlineButton
+                  label="Cancelar"
+                  onClick={() => navigation.back()}
+                />
+                <MainButton label="Salvar" />
+              </div>
             </div>
           </div>
         </div>
