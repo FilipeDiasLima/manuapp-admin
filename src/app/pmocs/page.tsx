@@ -26,7 +26,7 @@ export default function Pmocs() {
             </div>
             <div className="flex flex-row items-center space-x-2">
               <p>Atualizar: </p>
-              <IconButton icon={<RefreshCcw />} />
+              <IconButton icon={<RefreshCcw size={20} />} />
             </div>
           </div>
           <div className="w-36">
