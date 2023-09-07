@@ -3,46 +3,47 @@
 import { Trash } from "lucide-react";
 import { Input } from "../Inputs/Input";
 import { Select } from "../Inputs/Select";
+import { useState } from "react";
 
 const toDoTypes = [
   {
-    id: 1,
-    name: "Check",
+    value: 1,
+    label: "Check",
   },
   {
-    id: 2,
-    name: "Número",
+    value: 2,
+    label: "Número",
   },
   {
-    id: 3,
-    name: "Texto",
+    value: 3,
+    label: "Texto",
   },
 ];
 
 const frequecyTypes = [
   {
-    id: 1,
-    name: "Semanal",
+    value: 1,
+    label: "Semanal",
   },
   {
-    id: 2,
-    name: "Mensal",
+    value: 2,
+    label: "Mensal",
   },
   {
-    id: 3,
-    name: "Bimestral",
+    value: 3,
+    label: "Bimestral",
   },
   {
-    id: 4,
-    name: "Trimestral",
+    value: 4,
+    label: "Trimestral",
   },
   {
-    id: 5,
-    name: "Semestral",
+    value: 5,
+    label: "Semestral",
   },
   {
-    id: 6,
-    name: "Anual",
+    value: 6,
+    label: "Anual",
   },
 ];
 
@@ -51,7 +52,19 @@ interface ToDoCardProps {
   onDelete: (id: number) => void;
 }
 
+interface SelectValueProps {
+  value: number;
+  label: string;
+}
+
 export function ToDoCard({ id, onDelete }: ToDoCardProps) {
+  const [selectedToDoType, setSelectedToDoType] = useState(
+    {} as SelectValueProps
+  );
+  const [selectedFrequencyType, setSelectedFrequencyType] = useState(
+    {} as SelectValueProps
+  );
+
   return (
     <div className="w-full flex flex-row space-x-4">
       <div
@@ -69,8 +82,18 @@ export function ToDoCard({ id, onDelete }: ToDoCardProps) {
       >
         <div className="flex flex-col space-y-2 flex-1">
           <Input placeholder="Descrição da tarefa" />
-          <Select label="Tipo de tarefa" itens={toDoTypes} />
-          <Select label="Frequência" itens={frequecyTypes} />
+          <Select
+            data={toDoTypes}
+            placeholder="Tipo de tarefa"
+            value={selectedToDoType?.value ? selectedToDoType : null}
+            onChange={(value) => setSelectedToDoType(value)}
+          />
+          <Select
+            data={frequecyTypes}
+            placeholder="Frequência"
+            value={selectedFrequencyType?.value ? selectedFrequencyType : null}
+            onChange={(value) => setSelectedFrequencyType(value)}
+          />
         </div>
         <div className="flex items-center">
           <button
