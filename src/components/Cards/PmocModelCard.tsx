@@ -1,3 +1,5 @@
+"use client";
+
 import { FileEdit, Trash } from "lucide-react";
 
 export function PmocModelCard() {

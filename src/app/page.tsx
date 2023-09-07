@@ -35,9 +35,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-1 items-center justify-center rounded-full w-full bg-gray-700 dark:bg-gray-400">
-          <Image src={MaintenanceSVG} alt="HomeSVG" />
-        </div>
+        <Image src={MaintenanceSVG} alt="HomeSVG" />
       </main>
     </>
   );

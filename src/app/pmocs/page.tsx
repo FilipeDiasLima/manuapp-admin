@@ -35,29 +35,41 @@ export default function Pmocs() {
             </Link>
           </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nome</th>
-              <th>Cliente</th>
-              <th>Mês</th>
-              <th>Status</th>
-              <th>Técnicos</th>
-              <th>Relatório</th>
-              <th>ART</th>
-              <th>Finalizar</th>
-              <th>Editar</th>
-              <th>Excluir</th>
-            </tr>
-          </thead>
-          <tbody className="py-2">
-            <PmocCard />
-            <PmocCard />
-            <PmocCard />
-            <PmocCard />
-          </tbody>
-        </table>
+        <div
+          className="
+            flex 
+            flex-row 
+            items-center  
+            py-2
+            border-b-2 
+            border-gray-border 
+            dark:border-gray-borderDark
+            w-full
+          "
+        >
+          <p className="text-center w-[5%]">ID</p>
+          <p className="text-center w-[18%]">Nome</p>
+          <p className="text-center w-[17%]">Cliente</p>
+          <p className="text-center w-[7%]">Mês</p>
+          <p className="text-center w-[10%]">Status</p>
+          <p className="text-center w-[13%]">Técnicos</p>
+          <p className="text-center w-[6%]">Relatório</p>
+          <p className="text-center w-[6%]">ART</p>
+          <p className="text-center w-[6%]">Finalizar</p>
+          <p className="text-center w-[6%]">Editar</p>
+          <p className="text-center w-[6%]">Excluir</p>
+        </div>
+        <div className="flex flex-col">
+          <PmocCard />
+          <PmocCard />
+          <PmocCard />
+          <PmocCard />
+          <PmocCard />
+          <PmocCard />
+          <PmocCard />
+          <PmocCard />
+          <PmocCard />
+        </div>
       </MainBoxPage>
     </div>
   );

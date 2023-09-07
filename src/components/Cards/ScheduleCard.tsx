@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export function ScheduleCard() {
@@ -10,7 +12,6 @@ export function ScheduleCard() {
         w-11/12 
         rounded-2xl 
         cursor-pointer 
-        hover:scale-[1.02]
         dark:border-none
         bg-gray-background
         dark:bg-gray-main
