@@ -28,7 +28,7 @@ export function MainBoxPage({
         maxWidth: `calc(100vw - ${screen.width * 0.17}px)`,
       }}
     >
-      <p className="text-xl ml-3">{title}</p>
+      {/* <p className="text-xl ml-3">{title}</p> */}
       <div
         className={`
             flex 

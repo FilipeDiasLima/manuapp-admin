@@ -1,33 +1,40 @@
+"use client";
+
 import { Check, FileDown, FileEdit, Trash } from "lucide-react";
 import { Icon } from "../Icon";
 
 export function PmocCard() {
   return (
-    <tr
+    <div
       className="
-        border-b-2 
-        border-gray-border 
-        dark:border-gray-borderDark
-        hover:shadow-md
-        hover:scale-[1.02]
-        duration-300
-        shadow-black
-        dark:shadow-white/10
-        cursor-pointer
-        rowShadow
+      flex 
+      flex-row 
+      items-center 
+      justify-between 
+      py-2
+      border-b-2 
+      w-full
+      border-gray-border 
+      dark:border-gray-borderDark
+      hover:shadow-md
+      hover:scale-[1.02]
+      duration-300
+      shadow-black
+      dark:shadow-white/10
+      cursor-pointer
       "
     >
-      <td className="text-center">54</td>
-      <td className="text-center">Cafeteria (2023)</td>
-      <td className="text-center">Cl Prata Ltda</td>
-      <td className="text-center">Agosto</td>
-      <td className="text-center">Em andamento</td>
-      <td className="text-center">
-        <p>Vitor Kona</p>
-        <p>Filipe Dias</p>
-        <p>Eduardo Cici</p>
-      </td>
-      <td className="text-center">
+      <p className="text-center w-[5%]">3022</p>
+      <p className="text-center w-[18%]">Cafeteria (2023)</p>
+      <p className="text-center w-[17%]">Cl Prata Lpa</p>
+      <p className="text-center w-[7%]">Agosto</p>
+      <p className="text-center w-[10%]">Em andamento</p>
+      <div className="flex flex-col items-center justify-center w-[13%]">
+        <p className="text-center">Vitor Kona</p>
+        <p className="text-center">Filipe Dias</p>
+        <p className="text-center">Eduardo Cici</p>
+      </div>
+      <div className="text-center w-[6%]">
         <button
           className="
             p-2 
@@ -42,8 +49,8 @@ export function PmocCard() {
         >
           <Icon isMain icon={<FileDown />} />
         </button>
-      </td>
-      <td className="text-center">
+      </div>
+      <div className="text-center w-[6%]">
         <button
           className="
             p-2 
@@ -58,8 +65,8 @@ export function PmocCard() {
         >
           <Icon isMain icon={<FileDown />} />
         </button>
-      </td>
-      <td className="text-center">
+      </div>
+      <div className="text-center w-[6%]">
         <button
           className="
             p-2 
@@ -74,8 +81,8 @@ export function PmocCard() {
         >
           <Check color="#00B169" />
         </button>
-      </td>
-      <td className="text-center">
+      </div>
+      <div className="text-center w-[6%]">
         <button
           className="
               p-2 
@@ -90,12 +97,12 @@ export function PmocCard() {
         >
           <FileEdit />
         </button>
-      </td>
-      <td className="text-center">
+      </div>
+      <div className="text-center w-[6%]">
         <button className="p-2 hover:shadow-md shadow-black dark:shadow-white/10 rounded-lg duration-300">
           <Trash color="#EF4949" />
         </button>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { Trash, UserCog2Icon } from "lucide-react";
 import Image from "next/image";
 

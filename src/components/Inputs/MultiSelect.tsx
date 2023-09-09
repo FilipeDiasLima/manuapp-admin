@@ -1,25 +1,31 @@
 "use client";
 
-import ReactSelect from "react-select";
+import Select from "react-select";
 
 interface SelectValueProps {
   value: number;
   label: string;
 }
 
-interface SelectProps {
+interface MultiSelectProps {
   placeholder: string;
   data: SelectValueProps[];
-  value: SelectValueProps | null;
-  onChange: (value: SelectValueProps) => void;
+  value: SelectValueProps[] | null;
+  onChange: (value: SelectValueProps[]) => void;
 }
 
-export function Select({ placeholder, data, onChange, value }: SelectProps) {
+export function MultiSelect({
+  placeholder,
+  data,
+  onChange,
+  value,
+}: MultiSelectProps) {
   return (
-    <ReactSelect
+    <Select
       options={data}
+      isMulti
+      closeMenuOnSelect={false}
       placeholder={placeholder}
-      isClearable
       styles={{
         control: (styles) => ({
           ...styles,
@@ -33,17 +39,15 @@ export function Select({ placeholder, data, onChange, value }: SelectProps) {
             borderColor: "#D9D9D9",
           },
         }),
-        option: (styles, { isFocused, isSelected }) => {
-          return {
-            ...styles,
-            backgroundColor: isFocused
-              ? "#2C2C2C"
-              : isSelected
-              ? "#1E1E1E"
-              : "transparent",
-            color: isFocused ? "#FFF" : isSelected ? "#FFF" : "#2C2C2C",
-          };
-        },
+        option: (styles, { isFocused, isSelected }) => ({
+          ...styles,
+          backgroundColor: isFocused
+            ? "#2C2C2C"
+            : isSelected
+            ? "#1E1E1E"
+            : "transparent",
+          color: isFocused ? "#FFF" : isSelected ? "#FFF" : "#2C2C2C",
+        }),
         menu: (styles) => ({
           ...styles,
           borderRadius: 16,
@@ -52,7 +56,7 @@ export function Select({ placeholder, data, onChange, value }: SelectProps) {
         }),
       }}
       value={value}
-      onChange={(value) => onChange(value as SelectValueProps)}
+      onChange={(value) => onChange(value as SelectValueProps[])}
     />
   );
 }

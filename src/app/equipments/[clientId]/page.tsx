@@ -1,6 +1,6 @@
 import { IconButton } from "@/components/Buttons/IconButton";
 import { MainButton } from "@/components/Buttons/MainButton";
-import { PmocCard } from "@/components/Cards/PmocCard";
+import { EquipmentCard } from "@/components/Cards/EquipmentCard";
 import { Divider } from "@/components/Divider";
 import { Icon } from "@/components/Icon";
 import { Input } from "@/components/Inputs/Input";
@@ -9,14 +9,18 @@ import { Sidebar } from "@/components/Sidebar";
 import { RefreshCcw, Search } from "lucide-react";
 import Link from "next/link";
 
-export default function Pmocs() {
+interface EquipmentsProps {
+  params: { clientId: string };
+}
+
+export default function Equipments({ params }: EquipmentsProps) {
   return (
     <div className="flex flex-row min-h-screen">
       <Sidebar />
       <MainBoxPage title="PMOCs">
         <div className="flex flex-row justify-between items-center">
-          <p>Lista de PMOCs</p>
-          <p>Total: 89</p>
+          <p>Lista de Equipamentos</p>
+          <p>Total: 4</p>
         </div>
         <Divider />
         <div className="flex flex-row justify-between items-center">
@@ -30,7 +34,7 @@ export default function Pmocs() {
             </div>
           </div>
           <div className="w-36">
-            <Link href="/pmocs/create">
+            <Link href={`/equipments/${params.clientId}/create`}>
               <MainButton label="Novo" />
             </Link>
           </div>
@@ -47,28 +51,21 @@ export default function Pmocs() {
             w-full
           "
         >
-          <p className="text-center w-[5%]">ID</p>
-          <p className="text-center w-[18%]">Nome</p>
-          <p className="text-center w-[17%]">Cliente</p>
-          <p className="text-center w-[7%]">Mês</p>
-          <p className="text-center w-[10%]">Status</p>
-          <p className="text-center w-[13%]">Técnicos</p>
-          <p className="text-center w-[6%]">Relatório</p>
-          <p className="text-center w-[6%]">ART</p>
-          <p className="text-center w-[6%]">Finalizar</p>
+          <p className="text-center w-[8%]">ID</p>
+          <p className="text-center w-[30%]">Nome Equipamento</p>
+          <p className="text-center w-[30%]">Modelo</p>
+          <p className="text-center w-[20%]">Ambiente</p>
           <p className="text-center w-[6%]">Editar</p>
           <p className="text-center w-[6%]">Excluir</p>
         </div>
         <div className="flex flex-col">
-          <PmocCard />
-          <PmocCard />
-          <PmocCard />
-          <PmocCard />
-          <PmocCard />
-          <PmocCard />
-          <PmocCard />
-          <PmocCard />
-          <PmocCard />
+          <EquipmentCard />
+          <EquipmentCard />
+          <EquipmentCard />
+          <EquipmentCard />
+          <EquipmentCard />
+          <EquipmentCard />
+          <EquipmentCard />
         </div>
       </MainBoxPage>
     </div>
