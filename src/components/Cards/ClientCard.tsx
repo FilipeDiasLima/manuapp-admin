@@ -2,8 +2,11 @@
 
 import { Trash, UserCog2Icon, Wrench } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function ClientCard() {
+  const router = useRouter();
+
   return (
     <div
       className="
@@ -48,6 +51,7 @@ export function ClientCard() {
           dark:shadow-white/10 
           rounded-lg 
           duration-300"
+          onClick={() => router.push(`/equipments/${32}`)}
         >
           <Wrench />
         </button>
