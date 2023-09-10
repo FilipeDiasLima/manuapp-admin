@@ -1,7 +1,6 @@
 "use client";
 
-import { FileEdit, Trash, UserCog2Icon, Wrench } from "lucide-react";
-import Image from "next/image";
+import { FileEdit, Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export function EquipmentCard() {

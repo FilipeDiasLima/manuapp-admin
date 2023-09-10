@@ -15,8 +15,33 @@ export default function Home() {
         </Link>
         <ThemeSwitcher />
       </header>
-      <main className="flex min-h-[calc(100vh_-_12rem)] sm:flex-col md:flex-row sm:items-start md:items-center justify-between sm:space-y-14 md:space-y-0 sm:px-10 sm:py-14 md:p-18">
-        <div className="flex flex-col flex-1 sm:min-h-[calc(100vh_-_6rem)] md:min-h-0 items-center md:justify-start sm:justify-between sm:space-y-10 ">
+      <main
+        className="
+        flex 
+        min-h-[calc(100vh_-_12rem)] 
+        sm:flex-col-reverse 
+        md:flex-row 
+        sm:items-center 
+        md:items-center 
+        justify-between 
+        sm:space-y-2 
+        md:space-y-0 
+        sm:px-10 
+        sm:py-2 
+        md:p-18
+      "
+      >
+        <div
+          className="
+            flex 
+            flex-col 
+            flex-1 
+            md:min-h-0 
+            items-center 
+            md:justify-start 
+            sm:space-y-4
+          "
+        >
           <div className="flex flex-col space-y-4 items-center">
             <h1 className="text-3xl font-bold text-center">
               Bem-vindo ao ManuApp
@@ -35,7 +60,11 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <Image src={MaintenanceSVG} alt="HomeSVG" />
+        <Image
+          src={MaintenanceSVG}
+          alt="HomeSVG"
+          className="sm:w-[200px] md:w-auto"
+        />
       </main>
     </>
   );

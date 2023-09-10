@@ -3,7 +3,7 @@
 import Select from "react-select";
 
 interface SelectValueProps {
-  value: number;
+  value: string;
   label: string;
 }
 

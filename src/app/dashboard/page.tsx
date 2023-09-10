@@ -44,7 +44,7 @@ export default function Dashboard() {
   const today = formattedDateString(new Date());
 
   return (
-    <div className="flex flex-row min-h-screen">
+    <div className="flex sm:flex-col md:flex-row min-h-screen">
       <Sidebar />
       <MainBoxPage title="Agenda">
         <div className="flex flex-row justify-between items-center w-full">
@@ -52,23 +52,21 @@ export default function Dashboard() {
           <p>Hoje: {today}</p>
         </div>
         <Divider />
-        <div className="flex flex-row justify-between items-center">
-          <div className="flex flex-row flex-1 space-x-4">
-            <div className="w-1/3">
+        <div className="flex md:flex-row sm:flex-col sm:space-y-2 justify-between items-center">
+          <div className="flex md:flex-row sm:flex-col md:space-x-4 sm:space-x-0 sm:space-y-2 w-full">
+            <div className="md:w-1/3 sm:w-auto sm:flex-1">
               <Input type="text" icon={<Icon icon={<Search />} />} />
             </div>
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center sm:w-full">
               <IconButton icon={<CalendarSearch />} />
             </div>
           </div>
-          <div className="w-36">
+          <div className="md:w-36 sm:w-full">
             <MainButton label="Novo" />
           </div>
         </div>
 
-        {/* Days */}
         <div className="flex flex-row w-full overflow-x-scroll px-2 py-6">
-          {/* Card Day */}
           {weekDays.map((weekDay, index) => (
             <div
               key={index}

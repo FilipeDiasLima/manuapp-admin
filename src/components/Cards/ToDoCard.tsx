@@ -7,42 +7,42 @@ import { useState } from "react";
 
 const toDoTypes = [
   {
-    value: 1,
+    value: "1",
     label: "Check",
   },
   {
-    value: 2,
+    value: "2",
     label: "Número",
   },
   {
-    value: 3,
+    value: "3",
     label: "Texto",
   },
 ];
 
 const frequecyTypes = [
   {
-    value: 1,
+    value: "1",
     label: "Semanal",
   },
   {
-    value: 2,
+    value: "2",
     label: "Mensal",
   },
   {
-    value: 3,
+    value: "3",
     label: "Bimestral",
   },
   {
-    value: 4,
+    value: "4",
     label: "Trimestral",
   },
   {
-    value: 5,
+    value: "5",
     label: "Semestral",
   },
   {
-    value: 6,
+    value: "6",
     label: "Anual",
   },
 ];
@@ -53,17 +53,15 @@ interface ToDoCardProps {
 }
 
 interface SelectValueProps {
-  value: number;
+  value: string;
   label: string;
 }
 
 export function ToDoCard({ id, onDelete }: ToDoCardProps) {
-  const [selectedToDoType, setSelectedToDoType] = useState(
-    {} as SelectValueProps
-  );
-  const [selectedFrequencyType, setSelectedFrequencyType] = useState(
-    {} as SelectValueProps
-  );
+  const [selectedToDoType, setSelectedToDoType] =
+    useState<SelectValueProps | null>(null);
+  const [selectedFrequencyType, setSelectedFrequencyType] =
+    useState<SelectValueProps | null>(null);
 
   return (
     <div className="w-full flex flex-row space-x-4">
@@ -85,13 +83,13 @@ export function ToDoCard({ id, onDelete }: ToDoCardProps) {
           <Select
             data={toDoTypes}
             placeholder="Tipo de tarefa"
-            value={selectedToDoType?.value ? selectedToDoType : null}
+            value={selectedToDoType}
             onChange={(value) => setSelectedToDoType(value)}
           />
           <Select
             data={frequecyTypes}
             placeholder="Frequência"
-            value={selectedFrequencyType?.value ? selectedFrequencyType : null}
+            value={selectedFrequencyType}
             onChange={(value) => setSelectedFrequencyType(value)}
           />
         </div>
