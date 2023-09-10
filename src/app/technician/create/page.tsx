@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function CreateUser() {
   return (
-    <div className="flex flex-row min-h-screen">
+    <div className="flex sm:flex-col md:flex-row min-h-screen">
       <Sidebar />
       <MainBoxPage title="Novo técnico">
         <div className="flex flex-row justify-between items-center">

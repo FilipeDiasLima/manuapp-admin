@@ -15,7 +15,7 @@ interface EquipmentsProps {
 
 export default function CreateEquipment({ params }: EquipmentsProps) {
   return (
-    <div className="flex flex-row min-h-screen">
+    <div className="flex sm:flex-col md:flex-row min-h-screen">
       <Sidebar />
       <MainBoxPage title="Novo cliente">
         <div className="flex flex-row justify-between items-center">
@@ -29,11 +29,13 @@ export default function CreateEquipment({ params }: EquipmentsProps) {
               <Input placeholder="Produto" />
               <Input placeholder="Modelo" />
               <Input placeholder="Fabricante" />
-              <Input placeholder="Ambiente" />
+              <Input placeholder="Local" />
             </div>
             <div className="flex flex-col w-2/6 space-y-2">
-              <Input placeholder="Tipo de equipamento" />
-              <Input placeholder="Categoria" />
+              <Input placeholder="Potência" />
+              <Input placeholder="Tipo de atividade" />
+              <Input placeholder="Ocupantes fixos" />
+              <Input placeholder="Ocupantes móveis" />
             </div>
           </div>
           <div className="flex flex-col w-4/6 space-y-4">

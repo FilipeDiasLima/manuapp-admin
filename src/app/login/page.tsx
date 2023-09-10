@@ -19,10 +19,39 @@ export default function Login() {
         </Link>
         <ThemeSwitcher />
       </header>
-      <main className="flex min-h-[calc(100vh_-_10rem)] sm:flex-col md:flex-row items-center justify-between sm:space-y-14 md:space-y-0 md:space-x-6 sm:px-10 sm:py-14 md:p-18">
-        <div className="flex flex-col flex-1 sm:min-h-[calc(100vh_-_6rem)] md:min-h-0 items-start md:justify-start sm:justify-between sm:space-y-10 xl:space-y-14 2xl:space-y-[200px]">
+      <main
+        className="
+          flex 
+          min-h-[calc(100vh_-_10rem)] 
+          sm:flex-col-reverse
+          md:flex-row 
+          items-center 
+          justify-between 
+          sm:space-y-2 
+          md:space-y-0 
+          md:space-x-6 
+          sm:px-10 
+          sm:py-2 
+          md:p-18
+        "
+      >
+        <div
+          className="
+            flex 
+            flex-col 
+            flex-1 
+            sm:min-h-[calc(100vh_-_6rem)] 
+            md:min-h-0 
+            items-start 
+            md:justify-start 
+            sm:justify-between 
+            sm:space-y-10 
+            xl:space-y-14 
+            2xl:space-y-[200px]
+          "
+        >
           <div className="flex flex-col space-y-12 items-center w-full">
-            <div className="w-2/4 flex flex-col items-center space-y-6">
+            <div className="sm:w-full md:w-2/4 flex flex-col items-center space-y-6">
               <h2 className="text-xl font-bold">Entre na sua conta</h2>
 
               <Divider />
@@ -58,7 +87,11 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <Image src={MaintenanceSVG} alt="HomeSVG" />
+        <Image
+          src={MaintenanceSVG}
+          alt="HomeSVG"
+          className="sm:w-[200px] md:w-auto"
+        />
       </main>
     </>
   );

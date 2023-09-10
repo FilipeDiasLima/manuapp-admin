@@ -23,9 +23,10 @@ export function MainBoxPage({
 
   return (
     <main
-      className={`flex-1 flex flex-col p-6 space-y-4 ml-[270px] overflow-hidden`}
+      className={`flex-1 flex flex-col sm:p-4 md:p-6 space-y-4 sm:ml-0 md:ml-[270px] overflow-hidden`}
       style={{
-        maxWidth: `calc(100vw - ${screen.width * 0.17}px)`,
+        maxWidth:
+          screen.width >= 600 ? `calc(100vw - ${screen.width * 0.17}px)` : "",
       }}
     >
       {/* <p className="text-xl ml-3">{title}</p> */}
@@ -38,12 +39,18 @@ export function MainBoxPage({
             bg-white
             dark:bg-gray-backgroundDark
             rounded-3xl
-            py-6
-            px-8
-            space-y-5
+            md:py-6
+            sm:py-3
+            md:px-8
+            sm:px-5
+            md:space-y-5
+            sm:space-y-3
         `}
         style={{
-          height: `calc(100vh - ${screen.height * 0.17}px)`,
+          height:
+            screen.width >= 600
+              ? `calc(100vh - ${screen.height * 0.17}px)`
+              : "",
         }}
       >
         {children}

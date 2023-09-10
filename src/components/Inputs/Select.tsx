@@ -3,7 +3,7 @@
 import ReactSelect from "react-select";
 
 interface SelectValueProps {
-  value: number;
+  value: string;
   label: string;
 }
 
@@ -53,6 +53,7 @@ export function Select({ placeholder, data, onChange, value }: SelectProps) {
       }}
       value={value}
       onChange={(value) => onChange(value as SelectValueProps)}
+      className="w-full"
     />
   );
 }

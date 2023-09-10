@@ -1,8 +1,8 @@
+import { Drawer } from "@/provider/drawer";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "../provider/theme";
-import { ThemeSwitcher } from "@/components/Buttons/ThemeSwitcher";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
         className={`${inter.className} text-gray-main dark:text-white bg-gray-background dark:bg-[#2D2D2D] duration-200`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main>{children}</main>
+          <Drawer>{children}</Drawer>
         </ThemeProvider>
       </body>
     </html>

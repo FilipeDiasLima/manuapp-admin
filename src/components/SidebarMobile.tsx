@@ -1,113 +1,92 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 
+import Logo from "../assets/logo.svg";
+import { useSidebar } from "@/hooks/useSidebar";
+import { ThemeSwitcher } from "./Buttons/ThemeSwitcher";
+import { Divider } from "./Divider";
+import { OutlineButton } from "./Buttons/OutlineButton";
+import { Icon } from "./Icon";
 import {
   BarChartBig,
   FileText,
   HardHat,
   LayoutPanelLeft,
   LogOut,
-  Menu,
   Users2,
+  X,
 } from "lucide-react";
+import Link from "next/link";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
-import Logo from "../assets/logo.svg";
-import { OutlineButton } from "./Buttons/OutlineButton";
-import { ThemeSwitcher } from "./Buttons/ThemeSwitcher";
-import { Divider } from "./Divider";
-import { Icon } from "./Icon";
-import { IconButton } from "./Buttons/IconButton";
-import { useSidebar } from "@/hooks/useSidebar";
-import { SidebarMobile } from "./SidebarMobile";
 
-export function Sidebar() {
+export function SidebarMobile() {
   const router = useRouter();
   const pathname = usePathname();
 
   const { theme } = useTheme();
-  const { onOpen, isMobile } = useSidebar();
+  const { isOpen, onClose } = useSidebar();
 
   return (
-    <>
-      <SidebarMobile />
+    <div
+      className={`
+        flex
+        bg-[#101010a1]
+        fixed
+        z-20
+        top-0
+        bottom-0
+        left-0
+        right-0
+        w-full
+        transition-all
+        duration-500
+        transform 
+        -translate-x-full
+        ${isOpen ? "translate-x-0" : ""}
+      `}
+    >
       <div
         className={`
-          ${isMobile ? "flex" : "hidden"}
           flex 
-          flex-row 
-          w-full
+          flex-col 
+          p-8 
+          w-3/4
           bg-white 
           dark:bg-gray-backgroundDark 
-          items-center 
+          min-h-screen 
           justify-between
-          p-2
         `}
       >
-        <div className="flex flex-row items-center justify-center">
-          <Image
-            src={Logo}
-            alt="Logo"
-            width={40}
-            className="animate-spin ease-linear slower-animation dark:invert"
-          />
-          <p className="text-xl">ManuApp</p>
+        <div className="flex flex-row w-full justify-between items-center">
+          <p className="text-xl">Menu</p>
+          <X onClick={onClose} />
         </div>
-        <div>
-          <IconButton small icon={<Menu />} onClick={onOpen} />
-        </div>
-      </div>
-      <div
-        className="
-        sm:hidden
-        md:flex 
-        flex-col 
-        p-8 
-        w-[270px]
-        bg-white 
-        dark:bg-gray-backgroundDark 
-        min-h-screen 
-        justify-between
-        md:fixed
-      "
-      >
-        {/* Top */}
-        <div className="flex flex-col w-full space-y-20">
-          {/* Logo */}
-          <div className="flex flex-row items-center justify-center">
-            <Image
-              src={Logo}
-              alt="Logo"
-              className="animate-spin ease-linear slower-animation dark:invert"
-            />
-            <p className="text-2xl">ManuApp</p>
-          </div>
 
-          {/* Links */}
-          <div className="flex flex-col space-y-2 max-w-[200px]">
+        <div className="flex flex-col w-full space-y-10">
+          <div className="flex flex-col space-y-2">
             <Link
               href="/dashboard"
               className={`
-            flex 
-            flex-row 
-            items-center 
-            justify-start 
-            rounded-xl
-            ${
-              pathname === "/dashboard"
-                ? "bg-gray-main text-white dark:bg-white dark:text-gray-main"
-                : "bg-transparent text-gray-main dark:text-white"
-            }
-            p-4
-            w-full
-            space-x-2
-            hover:shadow-md
-          shadow-black
-          dark:shadow-white/10
-            duration-200
-          `}
+                  flex 
+                  flex-row 
+                  items-center 
+                  justify-start 
+                  rounded-xl
+                  ${
+                    pathname === "/dashboard"
+                      ? "bg-gray-main text-white dark:bg-white dark:text-gray-main"
+                      : "bg-transparent text-gray-main dark:text-white"
+                  }
+                  p-4
+                  w-full
+                  space-x-2
+                  hover:shadow-md
+                shadow-black
+                dark:shadow-white/10
+                  duration-200
+                `}
             >
               <BarChartBig />
               <p>Dashboard</p>
@@ -116,24 +95,24 @@ export function Sidebar() {
             <Link
               href="/technician"
               className={`
-            flex 
-            flex-row 
-            items-center 
-            justify-start 
-            rounded-xl
-            ${
-              pathname === "/technician"
-                ? "bg-gray-main text-white dark:bg-white dark:text-gray-main"
-                : "bg-transparent text-gray-main dark:text-white"
-            }
-            p-4
-            w-full
-            space-x-2
-            hover:shadow-md
-          shadow-black
-          dark:shadow-white/10
-            duration-200
-          `}
+                  flex 
+                  flex-row 
+                  items-center 
+                  justify-start 
+                  rounded-xl
+                  ${
+                    pathname === "/technician"
+                      ? "bg-gray-main text-white dark:bg-white dark:text-gray-main"
+                      : "bg-transparent text-gray-main dark:text-white"
+                  }
+                  p-4
+                  w-full
+                  space-x-2
+                  hover:shadow-md
+                shadow-black
+                dark:shadow-white/10
+                  duration-200
+                `}
             >
               <HardHat />
               <p>Técnicos</p>
@@ -142,23 +121,23 @@ export function Sidebar() {
             <Link
               href="/clients"
               className={`
-            flex 
-            flex-row 
-            items-center 
-            justify-start 
-            rounded-xl
-            ${
-              pathname === "/clients"
-                ? "bg-gray-main text-white dark:bg-white dark:text-gray-main"
-                : "bg-transparent text-gray-main dark:text-white"
-            }
-            p-4
-            w-full
-            space-x-2
-            hover:shadow-md
-          shadow-black
-          dark:shadow-white/10
-            duration-200
+                flex 
+                flex-row 
+                items-center 
+                justify-start 
+                rounded-xl
+                ${
+                  pathname === "/clients"
+                    ? "bg-gray-main text-white dark:bg-white dark:text-gray-main"
+                    : "bg-transparent text-gray-main dark:text-white"
+                }
+                p-4
+                w-full
+                space-x-2
+                hover:shadow-md
+              shadow-black
+              dark:shadow-white/10
+                duration-200
           `}
             >
               <Users2 />
@@ -253,6 +232,6 @@ export function Sidebar() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

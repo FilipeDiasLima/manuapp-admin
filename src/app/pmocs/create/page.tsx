@@ -14,41 +14,43 @@ import { useDropzone } from "react-dropzone";
 
 const clients = [
   {
-    value: 1,
+    value: "1",
     label: "Cliente DFJKWE",
   },
   {
-    value: 2,
+    value: "2",
     label: "Cliente BSCV",
   },
   {
-    value: 3,
+    value: "3",
     label: "Cliente 887Y",
   },
 ];
 
 const techs = [
   {
-    value: 1,
+    value: "1",
     label: "Vitor Kona",
   },
   {
-    value: 2,
+    value: "2",
     label: "Filipe Dias",
   },
   {
-    value: 3,
+    value: "3",
     label: "Eduardo GG",
   },
 ];
 
 interface SelectValueProps {
-  value: number;
+  value: string;
   label: string;
 }
 
 export default function CreatePmoc() {
-  const [clientSelected, setClientSelected] = useState({} as SelectValueProps);
+  const [clientSelected, setClientSelected] = useState<SelectValueProps | null>(
+    null
+  );
   const [techsSelected, setTechsSelected] = useState<SelectValueProps[]>([]);
 
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
@@ -60,7 +62,7 @@ export default function CreatePmoc() {
   ));
 
   return (
-    <div className="flex flex-row min-h-screen">
+    <div className="flex sm:flex-col md:flex-row min-h-screen">
       <Sidebar />
       <MainBoxPage title="Modelo PMOC">
         <div className="flex flex-row justify-between items-center">
@@ -73,7 +75,7 @@ export default function CreatePmoc() {
             <Select
               data={clients}
               placeholder="Clientes"
-              value={clientSelected?.value ? clientSelected : null}
+              value={clientSelected}
               onChange={(value) => setClientSelected(value)}
             />
             <MultiSelect
