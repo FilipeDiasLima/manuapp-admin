@@ -68,9 +68,11 @@ export default function CreatePmoc() {
         <div className="flex flex-row justify-between items-center">
           <p>Cadastrar novo PMOC</p>
         </div>
+
         <Divider />
-        <div className="flex flex-row w-full justify-center space-x-6">
-          <div className="flex flex-col space-y-4 w-2/6">
+
+        <div className="flex md:flex-row sm:flex-col w-full sm:space-y-2 md:space-y-0 md:space-x-4">
+          <div className="flex flex-col md:w-2/6 sm:w-full space-y-2">
             <Input placeholder="Nome do documento" />
             <Select
               data={clients}
@@ -87,14 +89,14 @@ export default function CreatePmoc() {
             <Input placeholder="Responsável" />
             <Input placeholder="CREA/CFT" />
           </div>
-          <div className="flex flex-col space-y-4 w-2/6">
+          <div className="flex flex-col md:w-2/6 sm:w-full space-y-2">
             <Input placeholder="Período" />
             <Input placeholder="Frequência" />
             <Input placeholder="ART" />
           </div>
         </div>
         <div className="flex flex-col w-full items-center">
-          <div className="w-4/6 flex flex-col space-y-4">
+          <div className="md:w-4/6 sm:w-full flex flex-col space-y-4">
             <Divider />
             <p>Anexos:</p>
             <div
@@ -111,6 +113,7 @@ export default function CreatePmoc() {
                 bg-gray-background
                 dark:bg-[#2D2D2D]
                 py-8
+                px-4
                 rounded-2xl
                 cursor-pointer
               "
@@ -123,15 +126,13 @@ export default function CreatePmoc() {
             {files}
           </div>
         </div>
-        <div className="flex flex-col w-full items-center">
-          <div className="w-4/6 flex flex-col space-y-4">
-            <Divider />
-            <div className="flex flex-row w-full items-center justify-between space-x-6">
-              <Link href="/pmocs" className="w-full">
-                <OutlineButton label="Cancelar" />
-              </Link>
-              <MainButton label="Cadastrar" />
-            </div>
+        <div className="flex flex-col md:w-4/6 sm:w-full space-y-4">
+          <Divider />
+          <div className="flex md:flex-row sm:flex-col-reverse w-full items-center justify-between md:space-x-4">
+            <Link href="/pmocs" className="w-full sm:mt-2 md:mt-0">
+              <OutlineButton label="Cancelar" />
+            </Link>
+            <MainButton label="Cadastrar" />
           </div>
         </div>
       </MainBoxPage>

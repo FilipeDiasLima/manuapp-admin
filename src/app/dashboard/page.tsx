@@ -51,18 +51,47 @@ export default function Dashboard() {
           <p className="text-lg">Para esta semana</p>
           <p>Hoje: {today}</p>
         </div>
+
         <Divider />
-        <div className="flex md:flex-row sm:flex-col sm:space-y-2 justify-between items-center">
-          <div className="flex md:flex-row sm:flex-col md:space-x-4 sm:space-x-0 sm:space-y-2 w-full">
-            <div className="md:w-1/3 sm:w-auto sm:flex-1">
+
+        <div
+          className="
+            flex 
+            md:flex-row 
+            sm:flex-col 
+            sm:space-y-2 
+            md:space-y-0 
+            justify-between 
+            items-center
+          "
+        >
+          <div
+            className="
+              flex 
+              md:flex-row 
+              sm:flex-col 
+              items-center 
+              flex-1 
+              md:space-x-4 
+              sm:space-x-0 
+              md:space-y-0 
+              sm:space-y-2 
+              sm:w-full
+            "
+          >
+            <div className="md:w-1/3 sm:w-full md:flex-none">
               <Input type="text" icon={<Icon icon={<Search />} />} />
             </div>
-            <div className="flex flex-row items-center sm:w-full">
-              <IconButton icon={<CalendarSearch />} />
+            <div className="flex items-center flex-row space-x-4 md:w-32 sm:w-full">
+              <div className="md:w-auto sm:w-full">
+                <IconButton icon={<CalendarSearch size={20} />} />
+              </div>
             </div>
           </div>
           <div className="md:w-36 sm:w-full">
+            {/* <Link href="/dashboard/create"> */}
             <MainButton label="Novo" />
+            {/* </Link> */}
           </div>
         </div>
 
