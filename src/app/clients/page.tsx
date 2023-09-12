@@ -60,7 +60,7 @@ export default function Client() {
             </div>
           </div>
           <div className="md:w-36 sm:w-full">
-            <Link href="/client/create">
+            <Link href="/clients/create">
               <MainButton label="Novo" />
             </Link>
           </div>

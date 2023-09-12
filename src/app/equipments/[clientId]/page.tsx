@@ -86,16 +86,18 @@ export default function Equipments({ params }: EquipmentsProps) {
             border-b-2 
             border-gray-border 
             dark:border-gray-borderDark
-            sm:w-[960px]
+            sm:w-[1366px]
             md:w-full
             md:px-0
             sm:px-2
           "
           >
             <p className="text-center w-[8%]">ID</p>
-            <p className="text-center w-[30%]">Nome Equipamento</p>
-            <p className="text-center w-[30%]">Modelo</p>
-            <p className="text-center w-[20%]">Ambiente</p>
+            <p className="text-center w-[30%]">Nome equipamento</p>
+            <p className="text-center w-[15%]">Fabricante</p>
+            <p className="text-center w-[15%]">Modelo</p>
+            <p className="text-center w-[10%]">Potência</p>
+            <p className="text-center w-[10%]">Local</p>
             <p className="text-center w-[6%]">Editar</p>
             <p className="text-center w-[6%]">Excluir</p>
           </div>
@@ -104,7 +106,7 @@ export default function Equipments({ params }: EquipmentsProps) {
               flex 
               flex-col 
               w-full 
-              sm:w-[960px]
+              sm:w-[1366px]
               md:w-full
               md:px-0
               sm:px-2"

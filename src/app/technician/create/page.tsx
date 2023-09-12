@@ -17,42 +17,45 @@ export default function CreateUser() {
         <div className="flex flex-row justify-between items-center">
           <p>Cadastrar novo técnico</p>
         </div>
+
         <Divider />
-        <div className="flex flex-row space-x-6 w-full">
+
+        <div className="flex md:flex-row sm:flex-col sm:space-y-4 md:space-y-0 md:space-x-6 w-full sm:items-center md:items-start">
           <div className="flex-1">
             <AvatarDropzone
               label="Imagem do técnico"
               onFileUploaded={() => {}}
             />
           </div>
+
           <div className="flex flex-col w-full space-y-6">
-            <div className="flex flex-row w-full space-x-4">
-              <div className="flex flex-col w-2/6 space-y-2">
+            <div className="flex md:flex-row sm:flex-col w-full sm:space-y-2 md:space-y-0 md:space-x-4">
+              <div className="flex flex-col md:w-2/6 sm:w-full space-y-2">
                 <Input placeholder="Nome" />
                 <Input placeholder="CPF/CNPJ" />
                 <Input placeholder="E-mail" />
                 <Input placeholder="Telefone" />
               </div>
-              <div className="flex flex-col w-2/6 space-y-2">
-                <Input placeholder="Empresa" />
+              <div className="flex flex-col md:w-2/6 sm:w-full space-y-2">
+                <Input placeholder="Senha" />
                 <Input placeholder="CREA/CFT" />
                 <Input placeholder="Periodo de contrato" />
                 <Input placeholder="Status" />
               </div>
             </div>
 
-            <div className="w-4/6">
+            <div className="md:w-4/6 sm:w-full">
               <Divider />
             </div>
 
-            <div className="flex flex-row w-full space-x-4">
-              <div className="flex flex-col w-2/6 space-y-2">
+            <div className="flex md:flex-row sm:flex-col w-full sm:space-y-2 md:space-y-0 md:space-x-4">
+              <div className="flex flex-col md:w-2/6 sm:w-full space-y-2">
                 <Input placeholder="CEP" />
                 <Input placeholder="País" />
                 <Input placeholder="Estado" />
                 <Input placeholder="Cidade" />
               </div>
-              <div className="flex flex-col w-2/6 space-y-2">
+              <div className="flex flex-col md:w-2/6 sm:w-full space-y-2">
                 <Input placeholder="Endereço" />
                 <Input placeholder="Número" />
                 <Input placeholder="Bairro" />
@@ -60,10 +63,10 @@ export default function CreateUser() {
               </div>
             </div>
 
-            <div className="flex flex-col w-4/6 space-y-4">
+            <div className="flex flex-col md:w-4/6 sm:w-full space-y-4">
               <Divider />
-              <div className="flex flex-row w-full items-center justify-between space-x-4">
-                <Link href="/technician" className="w-full">
+              <div className="flex md:flex-row sm:flex-col-reverse w-full items-center justify-between md:space-x-4">
+                <Link href="/technician" className="w-full sm:mt-2 md:mt-0">
                   <OutlineButton label="Cancelar" />
                 </Link>
                 <MainButton label="Cadastrar" />

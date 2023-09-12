@@ -27,8 +27,10 @@ export function EquipmentCard() {
     >
       <p className="text-center w-[8%]">1231</p>
       <p className="text-center w-[30%]">Hi Wall - Escritório</p>
-      <p className="text-center w-[30%]">12.000 btu</p>
-      <p className="text-center w-[20%]">Escritório</p>
+      <p className="text-center w-[15%]">LG</p>
+      <p className="text-center w-[15%]">Hi Wall</p>
+      <p className="text-center w-[10%]">12.000 btu</p>
+      <p className="text-center w-[10%]">Escritório</p>
       <div className="flex justify-center w-[6%]">
         <button
           className="

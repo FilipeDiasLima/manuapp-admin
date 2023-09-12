@@ -64,14 +64,18 @@ export function ToDoCard({ id, onDelete }: ToDoCardProps) {
     useState<SelectValueProps | null>(null);
 
   return (
-    <div className="w-full flex flex-row space-x-4">
+    <div className="w-full flex space-x-4">
       <div
         className="
           flex 
-          flex-row 
+          md:flex-row 
+          sm:flex-col 
           flex-1
-          space-x-4
-          p-6
+          md:space-x-4
+          sm:space-y-2
+          md:space-y-0
+          md:p-6
+          sm:p-4
           rounded-xl
           border-2
           border-gray-border
@@ -93,10 +97,21 @@ export function ToDoCard({ id, onDelete }: ToDoCardProps) {
             onChange={(value) => setSelectedFrequencyType(value)}
           />
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center sm:w-full md:w-auto">
           <button
             onClick={() => onDelete(id)}
-            className="p-2 hover:shadow-md shadow-black dark:shadow-white/10 rounded-lg duration-300"
+            className="
+              p-2 
+              hover:shadow-md 
+              flex-1 
+              shadow-black 
+              dark:shadow-white/10 
+              rounded-lg 
+              duration-300
+              flex
+              items-center
+              justify-center
+            "
           >
             <Trash color="#EF4949" />
           </button>
