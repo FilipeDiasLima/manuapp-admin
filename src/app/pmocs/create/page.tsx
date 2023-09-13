@@ -71,7 +71,7 @@ export default function CreatePmoc() {
 
         <Divider />
 
-        <div className="flex md:flex-row sm:flex-col w-full sm:space-y-2 md:space-y-0 md:space-x-4">
+        <div className="flex md:flex-row sm:flex-col w-full justify-center sm:space-y-2 md:space-y-0 md:space-x-4">
           <div className="flex flex-col md:w-2/6 sm:w-full space-y-2">
             <Input placeholder="Nome do documento" />
             <Select
@@ -126,9 +126,11 @@ export default function CreatePmoc() {
             {files}
           </div>
         </div>
-        <div className="flex flex-col md:w-4/6 sm:w-full space-y-4">
-          <Divider />
-          <div className="flex md:flex-row sm:flex-col-reverse w-full items-center justify-between md:space-x-4">
+        <div className="flex flex-col w-full items-center space-y-4">
+          <div className="md:w-4/6 sm:w-full">
+            <Divider />
+          </div>
+          <div className="flex md:flex-row sm:flex-col-reverse md:w-4/6 sm:w-full items-center justify-between md:space-x-4">
             <Link href="/pmocs" className="w-full sm:mt-2 md:mt-0">
               <OutlineButton label="Cancelar" />
             </Link>
