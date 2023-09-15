@@ -60,12 +60,14 @@ export default function Login() {
                 placeholder="E-mail"
                 type="email"
                 icon={<Icon icon={<Mail />} />}
+                value="admin@admin.com"
               />
 
               <Input
                 placeholder="Senha"
                 type="password"
                 icon={<Icon icon={<Lock />} />}
+                value="123123"
               />
 
               <Link href="/dashboard" className="w-full">

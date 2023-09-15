@@ -10,6 +10,89 @@ import { Sidebar } from "@/components/Sidebar";
 import { RefreshCcw, Search } from "lucide-react";
 import Link from "next/link";
 
+const technicians = [
+  {
+    id: 1,
+    avatar: "filipediaslima",
+    nome: "João Silva",
+    cpf: "12345678901",
+    cnpj: "12345678901234",
+    data: "15/04/2021",
+  },
+  {
+    id: 2,
+    avatar: "abraao503",
+    nome: "Maria Santos",
+    cpf: "98765432101",
+    cnpj: "98765432101234",
+    data: "02/11/2022",
+  },
+  {
+    id: 3,
+    avatar: "diego3g",
+    nome: "Carlos Pereira",
+    cpf: "45678912301",
+    cnpj: "45678912301234",
+    data: "20/08/2020",
+  },
+  {
+    id: 4,
+    avatar: "queziaregina",
+    nome: "Ana Oliveira",
+    cpf: "65432178901",
+    cnpj: "65432178901234",
+    data: "05/12/2023",
+  },
+  {
+    id: 5,
+    avatar: "maykbrito",
+    nome: "Paulo Souza",
+    cpf: "78901234501",
+    cnpj: "78901234501234",
+    data: "30/07/2021",
+  },
+  {
+    id: 6,
+    avatar: "rodrigoogh",
+    nome: "Mariana Pereira",
+    cpf: "32178945601",
+    cnpj: "32178945601234",
+    data: "14/09/2022",
+  },
+  {
+    id: 7,
+    avatar: "AlexandrePecker",
+    nome: "Luiz Costa",
+    cpf: "56789012301",
+    cnpj: "56789012301234",
+    data: "18/03/2020",
+  },
+  {
+    id: 8,
+    avatar: "janaBR30",
+    nome: "Julia Fernandes",
+    cpf: "23456789012",
+    cnpj: "23456789012345",
+    data: "22/06/2023",
+  },
+  {
+    id: 9,
+    avatar: "rodrigorgtic",
+    nome: "Pedro Alves",
+    cpf: "89012345601",
+    cnpj: "89012345601234",
+    data: "09/01/2021",
+  },
+  {
+    id: 10,
+    avatar: "Amanda-ribeiiro",
+    nome: "Fernanda Lima",
+    cpf: "43210987601",
+    cnpj: "43210987601234",
+    data: "07/05/2023",
+  },
+];
+
 export default function Technician() {
   return (
     <div className="flex sm:flex-col md:flex-row min-h-screen">
@@ -112,16 +195,17 @@ export default function Technician() {
               md:px-0
               sm:px-2"
           >
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
-            <UserCard />
+            {technicians.map((item) => (
+              <UserCard
+                key={item.id}
+                avatar={item.avatar}
+                cnpj={item.cnpj}
+                cpf={item.cpf}
+                date={item.data}
+                id={item.id}
+                name={item.nome}
+              />
+            ))}
           </div>
         </div>
       </MainBoxPage>
