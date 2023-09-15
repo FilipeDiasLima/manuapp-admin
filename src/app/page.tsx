@@ -52,7 +52,7 @@ export default function Home() {
             </h3>
           </div>
           <div className="flex flex-col sm:w-full md:w-2/4 space-y-3">
-            <Link href="/">
+            <Link href="/register">
               <MainButton label="Cadastrar" type="button" />
             </Link>
             <Link href="/login">

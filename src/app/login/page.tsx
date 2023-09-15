@@ -83,7 +83,9 @@ export default function Login() {
 
               <p>Ainda não possui conta?</p>
 
-              <OutlineButton label="Cadastrar-se" />
+              <Link href="/register" className="w-full">
+                <OutlineButton label="Cadastrar-se" />
+              </Link>
             </div>
           </div>
         </div>
