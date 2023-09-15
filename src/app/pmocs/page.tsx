@@ -115,10 +115,6 @@ export default function Pmocs() {
             <PmocCard />
             <PmocCard />
             <PmocCard />
-            <PmocCard />
-            <PmocCard />
-            <PmocCard />
-            <PmocCard />
           </div>
         </div>
       </MainBoxPage>

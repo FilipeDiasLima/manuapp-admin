@@ -4,7 +4,23 @@ import { Trash, UserCog2Icon, Wrench } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export function ClientCard() {
+interface ClientCardProps {
+  id: number;
+  avatar: string;
+  name: string;
+  email: string;
+  contact: string;
+  date: string;
+}
+
+export function ClientCard({
+  avatar,
+  contact,
+  date,
+  email,
+  id,
+  name,
+}: ClientCardProps) {
   const router = useRouter();
 
   return (
@@ -26,20 +42,20 @@ export function ClientCard() {
         w-full
       "
     >
-      <p className="text-center w-[5%]">1231</p>
+      <p className="text-center w-[5%]">{id}</p>
       <div className="flex justify-center w-[10%]">
         <Image
           width={50}
           height={50}
-          src="https://housing.com/news/wp-content/uploads/2022/11/cafe-design-compressed-1.jpg"
+          src={avatar}
           alt="avatar"
           className="object-cover object-center w-[50px] h-[50px] rounded-xl border-2"
         />
       </div>
-      <p className="text-center w-[21%]">Cl Prata Ltda</p>
-      <p className="text-center w-[17%]">suporte@clprata.com.br</p>
-      <p className="text-center w-[15%]">(92) 9 9202-3441</p>
-      <p className="text-center w-[12%]">23/07/2022</p>
+      <p className="text-center w-[21%]">{name}</p>
+      <p className="text-center w-[17%]">{email}</p>
+      <p className="text-center w-[15%]">{contact}</p>
+      <p className="text-center w-[12%]">{date}</p>
       <div className="flex justify-center w-[10%]">
         <button
           className="

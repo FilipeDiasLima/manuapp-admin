@@ -3,7 +3,16 @@
 import { Trash, UserCog2Icon } from "lucide-react";
 import Image from "next/image";
 
-export function UserCard() {
+interface UserCardProps {
+  id: number;
+  avatar: string;
+  name: string;
+  cpf: string;
+  cnpj: string;
+  date: string;
+}
+
+export function UserCard({ avatar, cnpj, cpf, date, id, name }: UserCardProps) {
   return (
     <div
       className="
@@ -24,20 +33,20 @@ export function UserCard() {
         cursor-pointer
       "
     >
-      <p className="text-center w-[5%]">3022</p>
+      <p className="text-center w-[5%]">{id}</p>
       <div className="flex justify-center items-center w-[10%]">
         <Image
           width={50}
           height={50}
-          src="https://github.com/filipediaslima.png"
+          src={`https://github.com/${avatar}.png`}
           alt="avatar"
           className="object-cover rounded-xl border-2"
         />
       </div>
-      <p className="text-center w-[25%]">Filipe Dias de Lima</p>
-      <p className="text-center w-[15%]">430.324.095-42</p>
-      <p className="text-center w-[15%]">000.000.000/0001-00</p>
-      <p className="text-center w-[12%]">23/07/2022</p>
+      <p className="text-center w-[25%]">{name}</p>
+      <p className="text-center w-[15%]">{cpf}</p>
+      <p className="text-center w-[15%]">{cnpj}</p>
+      <p className="text-center w-[12%]">{date}</p>
       <p className="text-center w-[8%]">Ativo</p>
       <div className="flex justify-center items-center w-[5%]">
         <button
